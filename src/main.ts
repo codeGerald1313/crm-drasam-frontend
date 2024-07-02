@@ -53,12 +53,12 @@ app.use(createPinia())
 
 // SERVER
 
-window.Echo = new Echo({
+ window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: 'd84b62278648c7c95ce9',
+    key: 'ASDASD2121',
     wsHost: 'crm-drasam-backend-production.up.railway.app',
-    wsPort: 443,
-    cluster: 'us2s',
+    wsPort: 6001,
+    cluster: 'mt1',
     forceTLS: false,
     disableStats: true,
     encrypted: false,
