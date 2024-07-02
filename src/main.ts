@@ -49,14 +49,14 @@ app.use(createPinia())
          }
     },
      logToConsole: true
- });
-*/
+ });*/
+
 // SERVER
 
- window.Echo = new Echo({
+window.Echo = new Echo({
     broadcaster: 'pusher',
     key: 'ASDASD2121',
-    wsHost: 'https://crm-drasam-backend-production.up.railway.app/',
+    wsHost: 'crm-drasam-backend-production.up.railway.app',
     wsPort: 6001,
     cluster: 'mt1',
     forceTLS: false,
