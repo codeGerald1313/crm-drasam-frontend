@@ -129,7 +129,7 @@ export default defineComponent({
     const useConversation = acitivitiesInLive();
 
     const waitTimes = ref<Array<WaitTimes>>([]);
-      const waitTimes2 = ref([]);
+      const waitTimes2 = ref<any[]>([]);
 
     const headers = useAuth().headers();
     const selectMes = ref(null);
