@@ -139,9 +139,9 @@ const enviarRespuestaInteractiva = (messageId: any) => {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/webhook-level-2`;
 
 
-            useConversation.selectedConversation(conversation_selected);
+            // useConversation.selectedConversation(conversation_selected);
 
-            useConversation.initMessage(conversation_selected._value?.id)
+            // useConversation.initMessage(conversation_selected._value.id)
 
 
             console.log(conversation_selected);
