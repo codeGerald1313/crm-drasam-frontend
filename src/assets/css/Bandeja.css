@@ -1,0 +1,512 @@
+/** CAMBIOS */
+.text-color{
+    color: #F8BC02;    
+}
+
+/**PANEL ASESORES */
+.asesores-pane
+{           
+    
+    background: #FFFAEC;
+    border-bottom: none;
+}
+
+.asesores-border
+{
+    width: 100%;
+    height: 70%;
+}
+.nk-ibx-head
+{
+    
+    padding: 16px 0px 0px 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: none;
+    border-bottom: 1px solid #A9A9A9;
+}
+.input-search{
+    height: 40px;
+    border:1.5px solid #A9A9A9;	
+    border-radius: 10px;
+    background: transparent;
+}
+.input-search::placeholder
+{
+    opacity: 50%;
+    font-size: 15px;
+}
+.search-input
+{
+    width: 100%; 
+    border: none;   
+}
+.search-input:focus
+{
+    outline: none;
+}
+.search-input::placeholder
+{
+    opacity: 50%;
+}
+.icon-pointer
+{
+    cursor: pointer;
+}
+
+.dropdown-menu 
+{
+    width: 240px;
+}
+.asesores-data
+{
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+.lead-text
+{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn-asignar
+{
+    border-radius: 50px;    
+    color: #EEC250;
+    border-color: #EEC250;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: transparent;
+    background-color: transparent;    
+}
+.btn
+{
+    outline: #F8BC02;
+}
+
+/* END PANEL ASESORES */
+
+/**PANEL CHATS */
+.b-search-add
+{
+    padding: 10px 10px 10px 10px;
+}
+.b-todo-asig
+{
+    padding: 0px 10px 0px 10px;
+}
+.b-toggle
+{
+    padding: 0px 5px 0px 5px;
+}
+.row
+{
+    --bs-gutter-x: 0px;
+}
+.form-select
+{
+    width: 35%;
+    
+}
+.text-chat
+{
+    display: flex;
+    height: 40px;    
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.text-select
+{
+    height: 40px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: 90%;
+    justify-content: end;
+}
+.form-estado
+{
+    background: transparent;
+    width: 87px;
+    height: 30px;
+    border-radius: 5px;
+    color: #F8BC02; 
+    border-color: #F8BC02;   
+    padding: 0px 0px 0px 10px;
+}   
+.form-recordar
+{
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid #A9A9A9;
+    width: 184px;
+    height: 40px;
+}
+.select-icon
+{
+    position: absolute;
+    color: #F8BC02;
+    padding: 0px 5px 0px 0px;
+    pointer-events: none;
+}
+
+/* END PANEL CHATS */
+
+
+.btn-active-chat{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #F8BC02;
+    color: #F8BC02;
+}
+
+.btn-inactive-chat{
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #A9A9A9;
+    color: #545454;
+}
+
+/**CHATS USERS */
+.nk-chat-list
+{
+    padding: 0px 0px 0px 0px;
+}
+.nk-chat-head
+{
+    height: 57px;
+}
+.bg-user
+{
+    background-color: #FFF0C8;    
+}
+.text-estado
+{
+    font-size: 77%;
+}
+
+/* IMAGEN DEL CHAT PRINCIPAL*/
+.nk-chat-panel
+{
+    background-image: url(../../assets/images/bandeja/bg-chat.png);
+    background-color: hsl(48, 42%, 97%);
+    transition: background-color 300ms;
+}
+
+.nk-chat-panel-none {
+    width: 100%;
+    background-image: url(../../assets/images/bandeja/bg-chat.png);
+    background-color: hsl(48, 42%, 97%);
+    transition: background-color 300ms;
+    position: relative;
+    text-align: center;
+  }
+  
+.nk-chat-panel-none::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../../assets/images/bandeja/icon-message.png);
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nk-chat-panel-none::after {
+    content: "!Comienza a hablar con tus contactos!";
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    letter-spacing: normal;
+    top: 54%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.estado-dia
+{
+    width: 174px;
+    height: 30px;
+    background: #E8E8E8;
+    border-radius: 11px;
+    outline: 2px solid #D2D2D2;
+}
+.chat.is-me .chat-msg
+{
+    background-color: #D9FDD3;
+    color: #545454;
+}
+.chat.is-you .chat-msg
+{
+    color: #545454;
+}
+.chat-msg
+{
+    max-width: 333px;
+}
+.chat-estados
+{
+    --bs-dropdown-min-width: none;
+    width: 90px;
+}
+.link-list-opt a
+{
+    padding: 0px;
+}
+.input-text
+{
+    overflow: hidden;
+    overflow-wrap: break-word;
+    resize: none;
+
+    outline: 1px solid #D2D2D2;
+    padding: 11px 0px 0px 11px;
+    margin-right: 0px;
+}
+
+.input-text-multimedia
+{
+    overflow-wrap: break-word;
+    outline: 1px solid #D2D2D2;
+    padding: 11px 0px 0px 11px;
+    margin-right: 0px;
+}
+/** modal */
+.modal-cerrar
+{
+    width: 400px;
+}
+.modal-asignar
+{
+    width: 215px;
+    
+}
+
+
+.modal-width
+{
+ width: 300px;
+}
+
+.modal-header
+{
+    border-bottom: none;
+    margin-top: 10px;
+}
+.modal-editar-dialog
+{
+    margin: 0px;
+    align-items: normal;
+    justify-content: end;
+    max-width: none;    
+    height: 100%;
+}
+.modal-editar
+{
+    width: 388px;
+    background: white;
+}
+.editar-input
+{
+    background: transparent;
+    border: 1px solid #A9A9A9;
+    border-radius: 10px;
+    height: 42px;
+    font-size: 17px;
+    
+}
+.form-editar
+{
+    background: transparent;
+    border-radius: 10px;        
+    height: 40px;
+}
+.check-boxes
+{
+    padding: 0px 24px 24px 24px;
+}
+.caja-asignar
+{
+    height: 58px; 
+    width: 100%;   
+    border-radius: 7px;
+    
+}
+.caja-asignar::-webkit-scrollbar
+{
+    
+    width: 8px;
+    border: 1px solid #A9A9A9;    
+    border-radius: 20px;    
+    
+}
+.caja-asignar::-webkit-scrollbar-thumb
+{
+    background: #A9A9A9;
+    border-radius: 20px;
+
+}
+.caja-contacto
+{
+    height: 40px; 
+    width: 100%;   
+    border-radius: 7px;
+}
+.form-check-input
+{
+ border: 2px solid #F8BC02;
+ width: 15px;
+}
+.recordar-input
+{
+    width: 184px;
+}
+.b-aceptar
+{
+    width: 130px;
+    height: 44px;
+}
+.select-agregar
+{
+    background: transparent;
+    border: 1px solid #A9A9A9;
+    border-radius: 10px;
+    height: 42px;
+    font-size: 14px;
+}
+.select-agregar-icon
+{
+    width: 100%;
+    justify-content: end;
+    align-items: center;    
+    height: 100%;
+    font-size: 17px;
+    position: absolute;
+    pointer-events: none;
+    padding-right: 10px;
+}
+.lead-text {
+    font-weight: 100;
+}
+
+/* CHAT */
+
+.chat-meta li{
+    color: #545454;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+/* CSS LOAD IMAGE */
+
+.remove-image-button {
+  background-color: #ff6961;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-preview-container {
+  position: relative;
+  display: inline-block;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+
+/* CSS SPINNER */
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #F8BC02;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

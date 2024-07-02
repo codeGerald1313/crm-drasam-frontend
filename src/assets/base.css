@@ -1,0 +1,122 @@
+.c-ptr{
+    cursor: pointer;
+}
+
+.el-select .el-input__wrapper {
+    box-shadow: 0 0 0 1px #fff inset !important;
+}
+
+.el-select .el-input.is-focus .el-input__wrapper{
+    box-shadow: 0 0 0 1px #fff inset !important;
+}
+
+.el-select .el-input__wrapper.is-focus{
+    box-shadow: 0 0 0 1px #fff inset !important;
+}
+
+.el-select .el-input__inner {
+    color: #F8BC02;
+    width: 100px;
+}
+
+.el-select-dropdown__item.selected {
+    color: #F8BC02;
+}
+
+/* MODULO CONTACTOS Y EQUIPO */
+
+.container-table{
+    /* max-height: 300px; */
+    overflow-y: auto;
+}
+
+.dsn-table th {
+    height: 42px;
+    background: #FFF4D7;
+    color: #2D383C;
+}
+
+.dsn-table > thead, tbody, tfoot, tr, td, th {
+    border-style: hidden;
+}
+.has-search {
+    width: 250px;
+}
+
+.has-search .form-control[data-v-6619591f] {
+    padding-left: 1rem;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.has-search .form-control[data-v-2f0bb190] {
+    padding-left: 1rem;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.active>.page-link {
+    color: #2D383C;
+    background-color: #FFF4D7;
+    border-color: #FFF4D7;
+}
+
+.password-input{
+    border-radius: 15px;
+    border: 1px solid #c3c3c3;
+    padding-left: 10px;
+}
+
+.password-input:focus{
+    border-radius: 15px;
+    border: 1px solid #c3c3c3;
+    padding-left: 10px;
+}
+
+@media (max-width: 576px) {
+    #custom-button-group button {
+        display: block;
+        width: 100%;
+    }
+    #custom-dropdown {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* END MODULO CONTACTOS Y EQUIPO */
+
+/* ICON USER */
+
+.icon-general{
+    background: #F8BC02 !important;
+}
+
+/* SEARCH PANEL MESSAGE */
+
+.el-input__inner {
+    font-size: 14px !important;
+}
+
+/* All size icon */
+
+.fs-icon-01{
+    font-size: 1rem !important;
+}
+
+.fs-icon-1{
+    font-size: 10px;
+}
+
+
+.fs-icon-3{
+    font-size: 13px;
+}
+
+.fs-icon-20{
+    font-size: 20px;
+}
+
+.fs-icon-rm{
+    font-size: 10rem
+}
