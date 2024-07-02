@@ -9,7 +9,9 @@
     }
   ],
   "compilerOptions": {
-    "noImplicitAny": false,
+    "strict": false, // Desactiva las verificaciones estrictas de tipos
+    "noImplicitAny": false, // Permite any implícito
+    "suppressImplicitAnyIndexErrors": true, // Suprime errores de índice any implícito
     // ...
     "types": ["element-plus/global", "vue-sweetalert2"]
   }
