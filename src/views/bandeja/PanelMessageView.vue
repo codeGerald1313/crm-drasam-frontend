@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted, nextTick } from 'vue';
+import { computed, ref, watch, onMounted, nextTick, reactive } from 'vue';
 import { useConversationStore } from '../../stores/conversation';
 import { useAuth } from '../../stores/auth'
 import ContactModal from './registercontact/ContactModal.vue';
@@ -104,7 +104,7 @@ const openModalRemenber = (idConver: number) => {
     showModalRemenber.value = true;
 }
 
-const selectedOptions: Record<string, string> = ref({});
+const selectedOptions: Record<string, string> = reactive({});
 
 const enviarRespuestaInteractiva = (messageId: any) => {
     const selectedValue = selectedOptions.value[messageId];
@@ -141,7 +141,7 @@ const enviarRespuestaInteractiva = (messageId: any) => {
 
             useConversation.selectedConversation(conversation_selected);
 
-            useConversation.initMessage(conversation_selected._value.id)
+            useConversation.initMessage(conversation_selected._value?.id)
 
 
             console.log(conversation_selected);
