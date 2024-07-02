@@ -9,6 +9,7 @@
     }
   ],
   "compilerOptions": {
+    "noImplicitAny": false,
     // ...
     "types": ["element-plus/global", "vue-sweetalert2"]
   }
