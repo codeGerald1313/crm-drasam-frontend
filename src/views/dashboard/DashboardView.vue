@@ -116,7 +116,7 @@ export default defineComponent({
     const messageContent = ref("");
     const formattedLastActivity = ref("");
 
-    const tableData = ref([]);
+    const tableData = ref<any[]>([]);
 
     const contactsNewAndTransfer = ref({
       nuevos: 0,
