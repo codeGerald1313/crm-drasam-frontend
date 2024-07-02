@@ -177,7 +177,7 @@ export default defineComponent({
                 console.error('Error en la autenticación:', error);
             }
         };
-        const generateRandomString = (length) => {
+        const generateRandomString = (length: any ) => {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let result = '';
             const charactersLength = characters.length;

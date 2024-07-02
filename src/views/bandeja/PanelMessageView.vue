@@ -106,7 +106,7 @@ const openModalRemenber = (idConver: number) => {
 
 const selectedOptions: Record<string, string> = ref({});
 
-const enviarRespuestaInteractiva = (messageId) => {
+const enviarRespuestaInteractiva = (messageId: any) => {
     const selectedValue = selectedOptions.value[messageId];
     if (selectedValue) {
         console.log(`Valor seleccionado para el mensaje ${messageId}: ${selectedValue}`);
