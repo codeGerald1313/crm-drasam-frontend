@@ -41,7 +41,7 @@ export default defineComponent({
                 <div class="nk-sidebar-content" data-simplebar>
                     <div class="nk-sidebar-menu">
                         <ul class="nk-menu apps-menu">
-                            <li class="nk-menu-item">
+                            <li class="nk-menu-item" v-show="hasPermissionTo(['dashboard'])">
                                 <RouterLink to="/" class="nk-menu-link" :class="{ 'active-side-item': $route.path === '/' }"
                                     @click="handleModuleSelect('Visión general')" title="Inicio">
                                     <span class="nk-menu-icon"><em class="icon ni ni-home icon-side"></em></span>
@@ -60,7 +60,7 @@ export default defineComponent({
                                     @click="handleModuleSelect('Contactos')"><span class="nk-menu-icon"><em
                                             class="icon ni ni-user-list-fill icon-side"></em></span></RouterLink>
                             </li>
-                            <li class="nk-menu-item">
+                            <li class="nk-menu-item" v-show="hasPermissionTo(['desktop'])">
                                 <RouterLink to="/desktop" class="nk-menu-link"
                                     :class="{ 'active-side-item': $route.path === '/desktop' }"
                                     @click="handleModuleSelect('Informes')" title="Informes">

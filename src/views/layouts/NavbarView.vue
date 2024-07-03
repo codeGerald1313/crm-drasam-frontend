@@ -119,63 +119,7 @@ export default defineComponent({
         </div>
         <div class="nk-header-tools">
           <ul class="nk-quick-nav">
-            <li class="dropdown notification-dropdown">
-              <a
-                href="#"
-                class="dropdown-toggle nk-quick-nav-icon"
-                data-bs-toggle="dropdown"
-              >
-                <div
-                  class="icon-status"
-                  :class="{ 'icon-status-info': notifications.length > 0 }"
-                >
-                  <em class="icon ni ni-bell"></em>
-                </div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end">
-                <div class="dropdown-head" v-if="notifications.length > 0">
-                  <span class="sub-title nk-dropdown-title"
-                    >Notificaciones</span
-                  >
-                </div>
-                <div class="dropdown-body">
-                  <div class="nk-notification">
-                    <div
-                      class="nk-notification-item dropdown-inner"
-                      v-if="notifications.length === 0"
-                    >
-                      <div class="nk-notification-content">
-                        <div class="nk-notification-text">
-                          No hay notificaciones
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="nk-notification-item dropdown-inner"
-                      v-else
-                      v-for="(notification, index) in notifications"
-                      :key="index"
-                    >
-                      <div class="nk-notification-icon">
-                        <em
-                          class="icon icon-circle bg-primary-dim ni ni-calender-date-fill"
-                        ></em>
-                      </div>
-                      <div class="nk-notification-content">
-                        <div class="nk-notification-text">
-                          <span class="recordatorio-text">RECORDATORIO:</span> Cliente {{ notification.contact_name }} está esperando ser atendido por: {{ notification.advisorName }}
-
-                        </div>
-                        <br>
-                        <div class="nk-notification-text dark-text bold-text"> 
-                          <span class="agendado-text">AGENDADO:</span> {{ notification.last_activity }}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+     
 
             <li class="dropdown list-apps-dropdown d-lg-none">
               <a

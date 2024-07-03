@@ -39,7 +39,6 @@ onMounted(async() => {
             <div class="nk-content-body">
                 <!-- PANEL ASESORES -->
                 <div class="nk-chat asesores-pane">
-                    <PanelAsesor v-if="hidePanel"/>
                     
                     <!-- PANEL CHATS -->
                     <PanelChat />

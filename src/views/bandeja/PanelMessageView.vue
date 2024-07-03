@@ -104,7 +104,7 @@ const openModalRemenber = (idConver: number) => {
     showModalRemenber.value = true;
 }
 
-const selectedOptions: Record<string, string> = reactive({});
+const selectedOptions = ref<Record<string, string>>({});
 
 const enviarRespuestaInteractiva = (messageId: any) => {
     const selectedValue = selectedOptions.value[messageId];
@@ -119,15 +119,13 @@ const enviarRespuestaInteractiva = (messageId: any) => {
         let endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion`;
 
         // Determinar el endpoint en base a la opción seleccionada
-
-        // Determinar el endpoint en base a la opción seleccionada
         if (selectedValue.startsWith('opea_opcion_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion-opea`;
         } else if (selectedValue.startsWith('dtrtycr_opcion_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion-dtrtycr`;
         } else if (selectedValue.startsWith('rating_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/webhook-encuesta`;
-        }else if (selectedValue.startsWith('ddca_opcion_')) {
+        } else if (selectedValue.startsWith('ddca_opcion_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion-ddca`;
         } else if (selectedValue.startsWith('doa_opcion_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion-doa`;
@@ -135,23 +133,30 @@ const enviarRespuestaInteractiva = (messageId: any) => {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion-mesa-de-partes`;
         } else if (selectedValue.startsWith('doa_area_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/guardar-seleccion-oficina-doa-administrativa`;
-        }else if (selectedValue.startsWith('office_')) {
+        } else if (selectedValue.startsWith('office_')) {
             endpoint = `${import.meta.env.VITE_API_URL}/chatboot/webhook-level-2`;
-
-
-            // useConversation.selectedConversation(conversation_selected);
-
-            // useConversation.initMessage(conversation_selected._value.id)
-
-
-            console.log(conversation_selected);
         }
 
         axios.post(endpoint, payload, {
             ...useAuth().headers()
         })
             .then(response => {
-                console.log('Success:', response.data);
+                const { message, event_info } = response.data;
+
+                if (event_info) {
+                    // Extraer los valores necesarios
+                    const conversation_selected = event_info;
+                    const conversationId = conversation_selected.id;
+
+                    // Llamar a los métodos con los datos desestructurados
+                    useConversation.selectedConversation(conversation_selected);
+                    useConversation.initMessage(conversationId);
+
+                    // Opcional: Log para depuración
+                    console.log('Conversation Selected:', conversation_selected);
+                } else {
+                    console.log('Success:', response.data);
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -160,6 +165,7 @@ const enviarRespuestaInteractiva = (messageId: any) => {
         alert('Por favor selecciona una opción antes de enviar.');
     }
 };
+
 
 // END MODAL RECORDAR
 
@@ -255,47 +261,15 @@ onMounted(async () => {
                                         class="ni ni-award text-warning fs-5"></em></span>
                             </div>
                             <div class="sub-text" v-if="conversation_selected.status != 'close'">
-                                <a style="cursor: pointer;"
-                                    @click.prevent="openModalContact(conversation_selected.contact)"
-                                    class="d-none d-sm-inline me-1 opacity-75 text-black">Editar datos</a>
+               
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
-            <div class="d-flex w-100 asignacion-chat align-items-center justify-content-end me-4"
-                v-if="conversation_selected.status != 'close'">
-                <div class="me-1">Asignado a</div>
-                <li>
-                    <div class="dropdown">
-                        <!-- <a href="javascript:void(0)" v-if="conversation_selected.status=='close'" class="dropdown-toggle text-color" >
-                        {{ conversation_selected.advisorName }}
-                    </a>                                                                    -->
-                        <el-select v-model="conversation_selected.advisorId"
-                            @change="assignIndividual(conversation_selected.id_asignacion, conversation_selected.advisorId)"
-                            filterable placeholder="Select" class="dropdown-toggle text-color"
-                            style="font-size: 155px !important;">
-                            <el-option v-for="item in advisorFilter" :key="item.id"
-                                :label="item.name + ` ` + item.last_name" :value="item.id" />
-                        </el-select>
-                    </div>
-                </li>
-            </div>
+           
 
-            <ul class="nk-chat-head-tools">
-
-                <div v-if="conversation_selected.status != 'close'">
-                    <button type="button" class="btn btn-outline-warning me-1 rounded-pill"
-                        @click="openModalCerrar(conversation_selected.id_asignacion)"><em
-                            class="icon ni ni-calendar-check me-1"></em>Cerrar</button>
-                </div>
-                <div v-if="conversation_selected.status != 'close'">
-                    <button type="button" v-if="!conversation_selected.date_remenber?.date_to_remenber"
-                        class="btn btn-outline-warning me-2 rounded-pill"
-                        @click="openModalRemenber(conversation_selected.id)"><em
-                            class="icon ni ni-clock me-1"></em>Recordar</button>
-                </div>
-            </ul>
+          
             <div class="nk-chat-head-search">
                 <div class="form-group">
                     <div class="form-control-wrap">

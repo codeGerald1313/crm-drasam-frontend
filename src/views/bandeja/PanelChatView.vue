@@ -68,6 +68,8 @@ const openModalContact = (data: {}) => {
 }
 
 const selectedConversation = (conversation: any) => {
+
+    console.log(conversation);
     useConversation.selectedConversation(conversation);
 
     useConversation.initMessage(conversation.id)
@@ -77,7 +79,7 @@ const selectedConversationAdvisor = (conversation: any) => {
     useConversation.selectedConversationAdvisor(conversation);
 }
 
-const hidePanelTab = ref(true);
+const hidePanelTab = ref(false);
 
 const togglePanelAdvisor = () => {
     hidePanelTab.value = !hidePanelTab.value;
@@ -315,19 +317,12 @@ onMounted(async() => {
     <div class="nk-chat-aside-head b-search-add">                            
         <div class="nk-chat-aside-user">
             <div class="fs-5 fw-bold text-black opacity-75">
-               <a class="c-ptr" @click="togglePanelAdvisor">
-                    <em class="text-color fw-bold" :class="hidePanelClass"></em>
-               </a>
+         
                 {{ title }}
             </div> 
         </div>
 
-        <ul class="nk-chat-aside-tools g-2">
-            <li>
-                <a @click.prevent="openModalContact" class="btn btn-round btn-icon">
-                    <em class="icon ni ni-user-add-fill text-color fs-3"></em>
-            </a></li>
-        </ul>
+
     </div>
 
     <div class="nk-chat-aside-head b-todo-asig">
@@ -336,26 +331,12 @@ onMounted(async() => {
                 <div class="col b-toggle">
                     <li>
                         <a class="btn" :class="{ 'btn-active-chat': activeTab === 'tabItem1', 'btn-inactive-chat': activeTab !== 'tabItem1' }" @click="changeTab('tabItem1','Tú')">
-                            <span>Tú</span>
+                            <span>Todas mis conversaciones</span>
                             <span class="badge bg-warning" v-if="unreadMessagesCountTab1 > 0" style="border-radius: 50px; margin-left: 10px;">{{ unreadMessagesCountTab1 }}</span>
                         </a>
                     </li>
                 </div>
-                <div class="col b-toggle">
-                    <li>
-                        <a class="btn" :class="{ 'btn-active-chat': activeTab === 'tabItem2', 'btn-inactive-chat': activeTab !== 'tabItem2' }" @click="changeTab('tabItem2','Sin Asignar')">
-                            <span>Sin Asignar</span>
-                            <span class="badge bg-warning" v-if="unreadMessagesCount > 0" style="border-radius: 50px; margin-left: 10px;">{{ unreadMessagesCount }}</span>
-                        </a>
-                    </li>
-                </div>
-                <div class="col b-toggle">
-                    <li>
-                        <a class="btn" :class="{ 'btn-active-chat': activeTab === 'tabItem3', 'btn-inactive-chat': activeTab !== 'tabItem3' }" @click="changeTab('tabItem3','Todo')">
-                            <span>Todo</span>
-                        </a>
-                    </li>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -378,20 +359,7 @@ onMounted(async() => {
                         </div>
                     </div>
 
-                    <div class="text-chat justify-content-between">
-                        <div class="d-flex"><h6 class="">Chats</h6></div>    
-                        <div class="text-select">                                                        
-                                <div class="me-1">
-                                    <p class="opacity-25">FILTRAR POR:</p>
-                                </div>                                                            
-                                <select v-model="statusId" class="form-estado form-select" @change="selectedChat">
-                                    <option v-for="status in chatsStatus" :value="status.id" :key="status.id">
-                                        {{ status.name }} 
-                                    </option>
-                                </select>
-                                <em class="icon ni ni-chevron-down select-icon fs-4" ></em>
-                        </div>                                                
-                    </div>
+  
 
                     <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow-x: scroll;">
                         <div class="simplebar-content" style="padding: 0px;">
@@ -414,35 +382,13 @@ onMounted(async() => {
                                                 <div class="chat-info">
                                                     <div class="chat-from">
                                                         <div class="name"> {{ conversation.contact.name }}</div>
-                                                        <span class="time opacity-75">{{ formatTimeAgo(conversation.last_activity) }}</span>
                                                     </div>
 
-                                                    <div class="chat-context estado justify-content-between">
-                                                        <div class="text text-estado">Tomado por {{ conversation.advisorName }}</div>                                                                                                                                                
-                                                    </div>
+                               
                                                 </div>
                                             </a>
                                             
-                                            <div class="chat-actions">
-                                                <div class="unread" v-if="conversation.count_messages > 0" >
-                                                    <span class="badge bg-warning" style="border-radius: 50px;">{{ conversation.count_messages }}</span>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <a href="#" class="btn btn-icon btn-sm btn-trigger dropdown-toggle"
-                                                        data-bs-toggle="dropdown"><em class="icon ni ni-downward-ios text-color"></em>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end chat-estados" >
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li v-for="(color, index) in colors" :key="index">
-                                                                <a href="javascript:void(0)">
-                                                                    <em class="icon ni ni-bullet-fill ms-1" :style="{ color: color.color }"></em>
-                                                                    <p class="text-black">{{ color.text }}</p>
-                                                                </a>
-                                                            </li>                                                                               
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+            
                                         </div>
 
                                         <!-- Conversacion sin asignar -->
