@@ -110,10 +110,10 @@ const sendMessage = (data: any) => {
             useConversation.chatbotInit(data);
         } else if (typeof data === 'string' && data.trim().length > 0) {
             // Si no es un DNI, verificar si es un mensaje válido para el webhook
-            if (currentConversation.advisorId === 3) {
+            if (currentConversation?.advisorId === 3) {
                 useConversation.chatbotWebhookTitulacionResponse(data);
 
-    } else if (currentConversation.contact_id === 53 ) {
+    } else if (currentConversation?.contact_id === 53 ) {
         useConversation.chatbotWebhookTitulacion(data);
 
     } else {
