@@ -113,9 +113,9 @@ const sendMessage = (data: any) => {
             if (currentConversation?.advisorId === 3) {
                 useConversation.chatbotWebhookTitulacionResponse(data);
 
-    } else if (currentConversation?.contact_id === 53 ) {
+    } /*else if (currentConversation?.contact_id === 53 ) {
         useConversation.chatbotWebhookTitulacion(data);
-
+*/
     } else {
         useConversation.chatbotWebhook(data);
     }
