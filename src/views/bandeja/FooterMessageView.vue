@@ -102,7 +102,6 @@ const sendMessage = (data: any) => {
         inputValue.value = ''
         const currentConversation = conversation_selected.value;
 
-
         console.log(currentConversation);
 
         // Verificar si `data` es un DNI válido (8 dígitos)
@@ -112,13 +111,9 @@ const sendMessage = (data: any) => {
             // Si no es un DNI, verificar si es un mensaje válido para el webhook
             if (currentConversation?.advisorId === 3) {
                 useConversation.chatbotWebhookTitulacionResponse(data);
-
-    } /*else if (currentConversation?.contact_id === 53 ) {
-        useConversation.chatbotWebhookTitulacion(data);
-*/
-    } else {
-        useConversation.chatbotWebhook(data);
-    }
+            } else {
+                useConversation.chatbotWebhook(data);
+            }
         }
     } else if (type_message.value == 'audio') {
         useConversation.sendMessage(data);
@@ -128,6 +123,7 @@ const sendMessage = (data: any) => {
         inputValue.value = ''
     }
 }
+
 
 
 const addNote = () => {
