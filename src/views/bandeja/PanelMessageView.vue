@@ -159,8 +159,6 @@ const enviarRespuestaInteractiva = (messageId: any) => {
 
                     useConversation.selectedConversation(conversation_selected);
 
-                    useConversation.initMessage(conversation_selected._value.id)
-
                 }
             })
             .catch(error => {
