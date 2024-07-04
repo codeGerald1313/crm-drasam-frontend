@@ -56,7 +56,7 @@ app.use(createPinia())
  window.Echo = new Echo({
     broadcaster: 'pusher',
     key: 'ASDASD2121',
-    wsHost: '127.0.0.1',
+    wsHost: 'crm-drasam-backend-production.up.railway.app',
     wsPort: 6001,
     cluster: 'mt1',
     forceTLS: false,
