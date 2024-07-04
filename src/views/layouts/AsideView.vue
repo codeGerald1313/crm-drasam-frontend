@@ -60,7 +60,7 @@ export default defineComponent({
                                     @click="handleModuleSelect('Contactos')"><span class="nk-menu-icon"><em
                                             class="icon ni ni-user-list-fill icon-side"></em></span></RouterLink>
                             </li>
-                            <li class="nk-menu-item" v-show="hasPermissionTo(['desktop'])">
+                            <li class="nk-menu-item">
                                 <RouterLink to="/desktop" class="nk-menu-link"
                                     :class="{ 'active-side-item': $route.path === '/desktop' }"
                                     @click="handleModuleSelect('Informes')" title="Informes">

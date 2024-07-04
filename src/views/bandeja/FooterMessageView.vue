@@ -85,7 +85,7 @@ const sendMessageFiles = (data: any, textcaption: any) => {
 }
 
 const sendMessage = (data: any) => {
-    console.log(data);
+    const conversation_selected = computed(() => useConversation.conversationSelected);
 
     if (type_message.value == 'text') {
         if (!data || data.trim() === '') {
@@ -100,13 +100,25 @@ const sendMessage = (data: any) => {
 
         useConversation.sendMessage(formtTextData);
         inputValue.value = ''
+        const currentConversation = conversation_selected.value;
+
+
+        console.log(currentConversation);
 
         // Verificar si `data` es un DNI válido (8 dígitos)
         if (typeof data === 'string' && data.trim().length === 8 && !isNaN(parseInt(data.trim(), 10))) {
             useConversation.chatbotInit(data);
         } else if (typeof data === 'string' && data.trim().length > 0) {
             // Si no es un DNI, verificar si es un mensaje válido para el webhook
-            useConversation.chatbotWebhook(data);
+            if (currentConversation.advisorId === 3) {
+                useConversation.chatbotWebhookTitulacionResponse(data);
+
+    } else if (currentConversation.contact_id === 53 ) {
+        useConversation.chatbotWebhookTitulacion(data);
+
+    } else {
+        useConversation.chatbotWebhook(data);
+    }
         }
     } else if (type_message.value == 'audio') {
         useConversation.sendMessage(data);

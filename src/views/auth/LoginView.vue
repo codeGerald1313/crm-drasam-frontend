@@ -7,7 +7,7 @@
                     <div class="animation-container text-center">
                         <img class="img-animation" src="../../assets/images/animation/computadora-y-ordenador-imagen-animada-0178.gif" alt="Helping Users Animation">
                         <h2 class="title">¡Tu satisfacción es nuestra prioridad!</h2>
-                        <p class="description">Estamos aquí para ayudarte con consultas automatizadas y nuestro chatbot.</p>
+                        <p class="description">Estamos aquí para ayudarte con consultas automatizadas, y abrirte paso a comunicarte directamente con las oficinas más demandadas.</p>
                         <button @click="continueToRegister" class="btn btn-warning btn-lg mt-4">Haz clic aquí para continuar</button>
                     </div>
                     

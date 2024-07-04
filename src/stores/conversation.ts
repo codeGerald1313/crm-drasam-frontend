@@ -262,7 +262,7 @@ export const useConversationStore = defineStore({
 
       this.updatedRead(requestMessage);
 
-      console.log(requestMessage);
+      console.log(sendData);
 
       this.existConversation(requestMessage);
       
@@ -292,6 +292,44 @@ export const useConversationStore = defineStore({
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_API_URL}/chatboot/webhook`,
+          { message: data }, // Envía `message` como parte de los datos
+          useAuth().headers()
+        );
+        console.log('Respuesta del webhook:', response.data);
+    
+        // Manejo adicional de la respuesta si es necesario
+        // Puedes actualizar el estado, disparar eventos, etc.
+    
+      } catch (error) {
+        console.error('Error en chatbotWebhook:', error);
+        throw error; // Puedes manejar este error como desees en tu componente
+      }
+    },
+
+    async chatbotWebhookTitulacion(data: any) {
+      console.log(data);
+      try {
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/chatboot/webhook-titulacion`,
+          { message: data }, // Envía `message` como parte de los datos
+          useAuth().headers()
+        );
+        console.log('Respuesta del webhook:', response.data);
+    
+        // Manejo adicional de la respuesta si es necesario
+        // Puedes actualizar el estado, disparar eventos, etc.
+    
+      } catch (error) {
+        console.error('Error en chatbotWebhook:', error);
+        throw error; // Puedes manejar este error como desees en tu componente
+      }
+    },
+    
+    async chatbotWebhookTitulacionResponse(data: any) {
+      console.log(data);
+      try {
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/chatboot/webhook-titulacion-response`,
           { message: data }, // Envía `message` como parte de los datos
           useAuth().headers()
         );

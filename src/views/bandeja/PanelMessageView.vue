@@ -144,13 +144,10 @@ const enviarRespuestaInteractiva = (messageId: any) => {
                 const { message, event_info } = response.data;
 
                 if (event_info) {
-                    // Extraer los valores necesarios
-                    const conversation_selected = event_info;
-                    const conversationId = conversation_selected.id;
+           
+                    location.reload();
 
-                    // Llamar a los métodos con los datos desestructurados
-                    useConversation.selectedConversation(conversation_selected);
-                    useConversation.initMessage(conversationId);
+       
 
                     // Opcional: Log para depuración
                     console.log('Conversation Selected:', conversation_selected);
