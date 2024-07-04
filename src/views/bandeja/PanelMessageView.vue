@@ -156,6 +156,11 @@ const enviarRespuestaInteractiva = (messageId: any) => {
                     console.log('Conversation Selected:', conversation_selected);
                 } else {
                     console.log('Success:', response.data);
+
+                    useConversation.selectedConversation(conversation_selected);
+
+                    useConversation.initMessage(conversation_selected._value.id)
+
                 }
             })
             .catch(error => {
@@ -261,15 +266,15 @@ onMounted(async () => {
                                         class="ni ni-award text-warning fs-5"></em></span>
                             </div>
                             <div class="sub-text" v-if="conversation_selected.status != 'close'">
-               
+
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
-           
 
-          
+
+
             <div class="nk-chat-head-search">
                 <div class="form-group">
                     <div class="form-control-wrap">
